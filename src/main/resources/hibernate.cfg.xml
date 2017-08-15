@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings 数据库连接驱动-->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/CN_TEST?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <!--本地地址-->
+
+
+        <!-- JDBC connection pool (use the built-in) 连接池大小-->
+        <property name="connection.pool_size">5</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Enable Hibernate's automatic session context management Hibernate上下文线程池级别-->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="c3p0.min_size">10</property> <!--在连接池中可用数据库连接的最小数目-->
+        <property name="c3p0.max_size">30</property> <!--在连接池中所有数据库连接的最大数目-->
+        <property name="c3p0.time_out">2000</property> <!--设定数据库连接的超时时间-->
+        <property name="c3p0.max_statement">50</property> <!--可以被缓存的PreparedStatement的最大数目-->
+        <!-- configuration pool -->
+        <property name="c3p0.acquire_increment">1</property>
+        <property name="c3p0.idle_test_period">100</property>
+        <property name="c3p0.max_statements">0</property>
+        <property name="c3p0.timeout">100</property>
+
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+
+        <!--其实这个hibernate.hbm2ddl.auto参数的作用主要用于：自动创建|更新|验证数据库表结构。如果不是此方面的需求建议set value="none"。-->
+        <!--create：-->
+        <!--每次加载hibernate时都会删除上一次的生成的表，然后根据你的model类再重新来生成新表，哪怕两次没有任何改变也要这样执行，这就是导致数据库表数据丢失的一个重要原因。-->
+        <!--create-drop ：-->
+        <!--每次加载hibernate时根据model类生成表，但是sessionFactory一关闭,表就自动删除。-->
+        <!--update：-->
+        <!--最常用的属性，第一次加载hibernate时根据model类会自动建立起表的结构（前提是先建立好数据库），以后加载hibernate时根据 model类自动更新表结构，即使表结构改变了但表中的行仍然存在不会删除以前的行。要注意的是当部署到服务器后，表结构是不会被马上建立起来的，是要等 应用第一次运行起来后才会。-->
+        <!--validate ：-->
+        <!--每次加载hibernate时，验证创建数据库表结构，只会和数据库中的表进行比较，不会创建新表，但是会插入新值。-->
+
+        <property name="hbm2ddl.auto">update</property>
+
+
+
+    </session-factory>
+</hibernate-configuration>
