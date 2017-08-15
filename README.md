@@ -1,18 +1,18 @@
-# IntelliJ IDEA + Tomcat + RestFul + Mysql打造属于自己的服务器(一)
+#  IntelliJ IDEA + Tomcat + RestFul + Mysql打造属于自己的服务器(一)
 
 标签（空格分隔）： 开源项目
 
 ---
 
-###软件相关版本配置
+### 软件相关版本配置
 * IntelliJ IDEA 2017.1.1
 * Tomcat 8.0.41
 * Mysql-5.7.18-macos10.12-x86_64
 * Jdk 1.8.0_121
 * Hibernate
 
-###那就愉快的开始吧
-####第一步(new project)
+### 那就愉快的开始吧
+#### 第一步(new project)
 ![1.png](http://upload-images.jianshu.io/upload_images/1316820-cc7148b0b882553f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -49,7 +49,7 @@
 
 ```
 好了,到这个地方就已经完成了web项目的搭建和Tomcat的配置了,接下来就看看Mysql的连接和Hibernate的相关默认配置,毕竟我们需要写相关的代码进行后台服务器的相关逻辑呀。
-####第三步(配置Mysql和RestFul框架)(gradle依赖形式)
+#### 第三步(配置Mysql和RestFul框架)(gradle依赖形式)
 
 ![9.png](http://upload-images.jianshu.io/upload_images/1316820-b2e1f93514ddbe2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -240,13 +240,13 @@ public class User {
 
 ![8.png](http://upload-images.jianshu.io/upload_images/1316820-d978510bb61c40a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#####GET请求模拟
+##### GET请求模拟
 ![get.png](http://upload-images.jianshu.io/upload_images/1316820-c8bc78bb4f08e24c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-#####POST请求模拟
+##### POST请求模拟
 ![post.png](http://upload-images.jianshu.io/upload_images/1316820-cc8d43c386c12c4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 好了,到这里就已经部署成功了,在接下来就是我们的实战了,实战应该会写一个朋友圈的功能,虽然朋友圈的功能我已经利用Bmob实现了,但是总感觉有些瑕疵,哈哈,有空就自己撸一个后台自己写吧。加油
 
-###推荐阅读
+### 推荐阅读
 [使用 Jersey 和 Apache Tomcat 构建 RESTful Web 服务][1](里面有关于相关软件的下载链接)
 
 [Maven和Gradle对比][2]
@@ -256,7 +256,7 @@ public class User {
 
 [Custom ResourceConfig 自定义资源配置][4]
 
-###代码传送门
+### 代码传送门
 https://github.com/wuyinlei/ServerTest
 https://github.com/wuyinlei/ServerTest
 https://github.com/wuyinlei/ServerTest
